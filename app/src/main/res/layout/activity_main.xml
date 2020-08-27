@@ -4,15 +4,227 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_margin="@dimen/size_16dp"
+    tools:context=".ui.main.MainActivity"
+    tools:ignore="HardcodedText">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:padding="@dimen/size_16dp"
+        android:id="@+id/text_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_tv_calculator"
+        android:gravity="bottom"
+        android:textSize="@dimen/size_40sp"
+        app:layout_constraintBottom_toTopOf="@+id/const_keybroad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_keybroad"
+        android:layout_width="@dimen/size_0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="@dimen/size_16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/text_calculator"
+        app:layout_constraintStart_toStartOf="@+id/text_calculator"
+        app:layout_constraintTop_toBottomOf="@+id/text_calculator">
+
+        <Button
+            android:id="@+id/button_e"
+            style="@style/ButtonExtend"
+            android:text="e"
+            app:layout_constraintEnd_toStartOf="@+id/button_pi"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_pi"
+            style="@style/ButtonExtend"
+            android:text="π"
+            app:layout_constraintEnd_toStartOf="@+id/button_mu"
+            app:layout_constraintStart_toEndOf="@id/button_e"
+            app:layout_constraintTop_toTopOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_mu"
+            style="@style/ButtonExtend"
+            android:text="^"
+            app:layout_constraintEnd_toStartOf="@+id/button_del"
+            app:layout_constraintStart_toEndOf="@id/button_pi"
+            app:layout_constraintTop_toTopOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_del"
+            style="@style/ButtonExtend"
+            android:text="del"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_mu"
+            app:layout_constraintTop_toTopOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_ac"
+            style="@style/ButtonCalculator"
+            android:text="AC"
+            android:textColor="@color/colorMain"
+            app:layout_constraintEnd_toStartOf="@+id/button_ngoac_mo"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_ngoac_mo"
+            style="@style/ButtonCalculator"
+            android:text="("
+            app:layout_constraintEnd_toStartOf="@+id/button_ngoac_dong"
+            app:layout_constraintStart_toEndOf="@+id/button_ac"
+            app:layout_constraintTop_toBottomOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_ngoac_dong"
+            style="@style/ButtonCalculator"
+            android:text=")"
+            app:layout_constraintEnd_toStartOf="@+id/button_chia"
+            app:layout_constraintStart_toEndOf="@+id/button_ngoac_mo"
+            app:layout_constraintTop_toBottomOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_chia"
+            style="@style/ButtonOperation"
+            android:text="/"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_ngoac_dong"
+            app:layout_constraintTop_toBottomOf="@+id/button_e" />
+
+        <Button
+            android:id="@+id/button_7"
+            style="@style/ButtonCalculator"
+            android:text="7"
+            app:layout_constraintEnd_toStartOf="@+id/button_8"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_ac" />
+
+        <Button
+            android:id="@+id/button_8"
+            style="@style/ButtonCalculator"
+            android:text="8"
+            app:layout_constraintEnd_toStartOf="@+id/button_9"
+            app:layout_constraintStart_toEndOf="@+id/button_7"
+            app:layout_constraintTop_toBottomOf="@id/button_ac" />
+
+        <Button
+            android:id="@+id/button_9"
+            style="@style/ButtonCalculator"
+            android:text="9"
+            app:layout_constraintEnd_toStartOf="@+id/button_nhan"
+            app:layout_constraintStart_toEndOf="@+id/button_8"
+            app:layout_constraintTop_toBottomOf="@id/button_ac" />
+
+        <Button
+            android:id="@+id/button_nhan"
+            style="@style/ButtonOperation"
+            android:text="x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_9"
+            app:layout_constraintTop_toBottomOf="@+id/button_ac" />
+
+        <Button
+            android:id="@+id/button_4"
+            style="@style/ButtonCalculator"
+            android:text="4"
+            app:layout_constraintEnd_toStartOf="@+id/button_5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_7" />
+
+        <Button
+            android:id="@+id/button_5"
+            style="@style/ButtonCalculator"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@+id/button_6"
+            app:layout_constraintStart_toEndOf="@+id/button_4"
+            app:layout_constraintTop_toBottomOf="@id/button_7" />
+
+        <Button
+            android:id="@+id/button_6"
+            style="@style/ButtonCalculator"
+            android:text="6"
+            app:layout_constraintEnd_toStartOf="@+id/button_nhan"
+            app:layout_constraintStart_toEndOf="@+id/button_5"
+            app:layout_constraintTop_toBottomOf="@id/button_7" />
+
+        <Button
+            android:id="@+id/button_tru"
+            style="@style/ButtonOperation"
+            android:text="-"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_6"
+            app:layout_constraintTop_toBottomOf="@+id/button_7" />
+
+        <Button
+            android:id="@+id/button_1"
+            style="@style/ButtonCalculator"
+            android:text="1"
+            app:layout_constraintEnd_toStartOf="@+id/button_2"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_4" />
+
+        <Button
+            android:id="@+id/button_2"
+            style="@style/ButtonCalculator"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@+id/button_3"
+            app:layout_constraintStart_toEndOf="@+id/button_1"
+            app:layout_constraintTop_toBottomOf="@id/button_4" />
+
+        <Button
+            android:id="@+id/button_3"
+            style="@style/ButtonCalculator"
+            android:text="3"
+            app:layout_constraintEnd_toStartOf="@+id/button_cong"
+            app:layout_constraintStart_toEndOf="@+id/button_2"
+            app:layout_constraintTop_toBottomOf="@id/button_4" />
+
+        <Button
+            android:id="@+id/button_cong"
+            style="@style/ButtonOperation"
+            android:text="+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_3"
+            app:layout_constraintTop_toBottomOf="@+id/button_4" />
+
+        <Button
+            android:id="@+id/button_0"
+            style="@style/ButtonCalculator"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="@+id/button_2"
+            app:layout_constraintStart_toEndOf="@+id/button_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_1" />
+
+        <Button
+            android:id="@+id/button_cham"
+            style="@style/ButtonCalculator"
+            android:text="."
+            app:layout_constraintEnd_toStartOf="@+id/button_bang"
+            app:layout_constraintStart_toEndOf="@+id/button_0"
+            app:layout_constraintTop_toBottomOf="@id/button_1" />
+
+        <Button
+            android:id="@+id/button_bang"
+            style="@style/ButtonCalculator"
+            android:background="@drawable/bg_button_result"
+            android:text="="
+            android:textColor="@color/colorBackGround"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_cham"
+            app:layout_constraintTop_toBottomOf="@id/button_1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

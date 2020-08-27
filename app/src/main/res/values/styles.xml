@@ -1,10 +1,43 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorMain</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CustomTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/colorBackGround</item>
+    </style>
+
+    <style name="ButtonKeyBroad">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:scaleX">0.9</item>
+        <item name="android:scaleY">0.9</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ButtonExtend" parent="ButtonKeyBroad">
+        <item name="android:background">@drawable/bg_button_extend</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="ButtonCalculator" parent="ButtonKeyBroad">
+        <item name="android:background">@drawable/bg_button_extend</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="ButtonOperation" parent="ButtonKeyBroad">
+        <item name="android:textColor">@color/colorBackGround</item>
+        <item name="android:background">@drawable/bg_button_operation</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_marginTop">10dp</item>
     </style>
 
 </resources>
