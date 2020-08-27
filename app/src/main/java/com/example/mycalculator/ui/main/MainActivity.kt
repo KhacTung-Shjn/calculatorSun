@@ -1,14 +1,14 @@
 package com.example.mycalculator.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mycalculator.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContact.View, View.OnClickListener {
 
-    val presenter: MainPresenter = MainPresenter(this)
+    private val presenter: MainPresenter = MainPresenter(this)
     var inputKey = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,15 +108,22 @@ class MainActivity : AppCompatActivity(), MainContact.View, View.OnClickListener
                 inputKey += "-"
             }
             R.id.button_nhan -> {
-                inputKey += "x"
+                inputKey += "*"
             }
             R.id.button_chia -> {
                 inputKey += "/"
             }
             R.id.button_bang -> {
-                inputKey += "="
+                presenter.calculator(text_calculator.text.toString())
             }
         }
         text_calculator.text = inputKey
+    }
+
+    override fun showResult(peek: String?) {
+        Thread {
+            inputKey = peek!!
+            text_calculator.text = peek
+        }.start()
     }
 }

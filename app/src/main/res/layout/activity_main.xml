@@ -9,12 +9,12 @@
     tools:ignore="HardcodedText">
 
     <TextView
-        android:padding="@dimen/size_16dp"
         android:id="@+id/text_calculator"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/bg_tv_calculator"
         android:gravity="bottom"
+        android:padding="@dimen/size_16dp"
         android:textSize="@dimen/size_40sp"
         app:layout_constraintBottom_toTopOf="@+id/const_keybroad"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +127,7 @@
         <Button
             android:id="@+id/button_nhan"
             style="@style/ButtonOperation"
-            android:text="x"
+            android:text="*"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button_9"
             app:layout_constraintTop_toBottomOf="@+id/button_ac" />

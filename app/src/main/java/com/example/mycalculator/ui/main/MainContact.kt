@@ -1,10 +1,12 @@
 package com.example.mycalculator.ui.main
 
 interface MainContact {
-    interface View{
+    interface View {
+        fun showResult(peek: String?)
 
     }
-    interface Presenter{
 
+    interface Presenter {
+        fun calculator(expression: String)
     }
 }
